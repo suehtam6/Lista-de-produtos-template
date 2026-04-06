@@ -3,3 +3,35 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e8e8e8;
+    font-family: Arial, sans-serif;
+}
+
+#container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card{
+    border-radius: 2%;
+    border: solid black 2px;
+    text-align: left;
+    width: 250px;
+    height: auto;
+    justify-items: center;
+    padding: 5px;
+    white-space-collapse: collapse;
+}
+
+.card img{
+    width: 200px;
+    height: auto;
+}
