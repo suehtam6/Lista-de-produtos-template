@@ -93,37 +93,53 @@ const listaProdutos = [
   }
 ]
 
-const criarCardProduto = function(produtos){
+const criarCardProduto = function (produtos) {
 
-    const card = document.createElement('div')
-    card.className = 'card'
+  const card = document.createElement('a')
+  card.className = 'card'
+  card.href = '#'
 
-    const nome = document.createElement('h3')
-    nome.textContent = produtos.nome
+  const nome = document.createElement('h3')
+  nome.textContent = produtos.nome
+  nome.className = 'nome'
 
-    const descricao = document.createElement('p')
-    descricao.textContent = produtos.descricao
+  const descricao = document.createElement('p')
+  descricao.textContent = produtos.descricao
+  descricao.className = 'descricao'
 
-    const preco = document.createElement('h3')
-    preco.textContent = `R$${produtos.preco}`
+  const preco = document.createElement('h3')
+  preco.textContent = `R$${produtos.preco}`
+  preco.className = 'preco'
 
-    const img = document.createElement('img')
-    img.src = `./img/${produtos.imagem}`
-    img.alt = `Foto sobre o produto ${produtos.nome}`
+  const img = document.createElement('img')
+  img.src = `./img/${produtos.imagem}`
+  img.alt = `Foto sobre o produto ${produtos.nome}`
 
-    const categoria = document.createElement('h3')
-    categoria.textContent = produtos.categoria
+  const categoria = document.createElement('p')
+  categoria.textContent = produtos.categoria
 
-    card.append(categoria, img, nome, descricao, preco)
+  let capturarEstrela = figuraEstrela(produtos.classificacao)
+  
 
-    return card
+  const classificacao = document.createElement('p')
+  classificacao.textContent = `${capturarEstrela} ${produtos.classificacao}`
+
+  card.append(categoria, classificacao, img, nome, descricao, preco)
+
+  return card
 }
 
-const estrela = function(){
-  
+const figuraEstrela = function (classificacao) {
+  let estrelas = [""]
+  for (let i = 1; i <= classificacao; i++) {
+      estrelas.push('⭐')
+
+      // Transforma array em uma string. Com isso posso modificar o separador dentro dele
+      estrelas.join ("")
+  }
+  return estrelas.join ("")
 }
 
 const produtos = listaProdutos.map(criarCardProduto)
-console.log(produtos)
 
 document.getElementById('container').append(...produtos)
