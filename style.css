@@ -9,23 +9,60 @@ a{
     color: initial;
 }
 
-a:hover{
-    background-color: rgb(205, 205, 245);
+ul, li{
+    list-style: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(182, 186, 188);
+    font-family: Arial, sans-serif;
+}
+
+header{
+    width: 100%;
+    margin-bottom:10dvh;
+    padding-right: 30px;
+    display: flex;
+    justify-content: center;
+    background-color: aqua;
+    height: 6dvh;
+}
+
+.topo{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    width: 100%;
+}
+
+input{
+    border-radius: 10%;
+    width: 60dvh;
+    height: 4dvh;
+}
+
+.navbar{
+    display: flex;
+    gap: 30px;
+    font-size: 20px;
+    align-items: center;
+    
+}
+
+
+.navlist a:hover{
+    color: rgb(219, 3, 3);
     transition: 0.5s;
+    text-decoration: underline;
 }
 
 .nome{
     text-decoration: overline;
     font-size: 15px;
-}
-
-body {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(182, 186, 188);
-    font-family: Arial, sans-serif;
 }
 
 #container {
@@ -47,12 +84,18 @@ body {
     align-items: center;
     flex-direction: column;
     text-align: center;
-   background-color: #fafafa;
+    background-color: #fafafa;
 }
 
 .card img{
     width: 10dvh;
     height: 10dvh;
+}
+
+.card:hover{
+    background-color: rgb(205, 205, 245);
+    transition: 0.5s;
+    
 }
 
 /*
