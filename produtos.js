@@ -122,9 +122,9 @@ const criarCardProduto = function (produtos) {
   
 
   const classificacao = document.createElement('p')
-  classificacao.textContent = `${capturarEstrela} ${produtos.classificacao}`
+  classificacao.textContent = capturarEstrela
 
-  card.append(categoria, classificacao, img, nome, descricao, preco)
+  card.append(categoria, img, nome, descricao, classificacao, preco)
 
   return card
 }
